@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,11 +16,135 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vSb-0P-wLP">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="61"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bannerlogo" translatesAutoresizingMaskIntoConstraints="NO" id="e5j-34-ND1">
+                                        <rect key="frame" x="255" y="13" width="90" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="ZsM-EL-FUs"/>
+                                            <constraint firstAttribute="width" constant="90" id="i9F-To-0PW"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="Uvp-WS-WfG">
+                                        <rect key="frame" x="547" y="31" width="45" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="45" id="ESU-aL-TvS"/>
+                                            <constraint firstAttribute="height" constant="22" id="FPI-15-s6l"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1803921568627451" green="0.52941176470588236" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Uvp-WS-WfG" secondAttribute="bottom" constant="8" id="Cfu-7m-yDK"/>
+                                    <constraint firstAttribute="trailing" secondItem="Uvp-WS-WfG" secondAttribute="trailing" constant="5" id="XV9-DD-85F"/>
+                                    <constraint firstItem="e5j-34-ND1" firstAttribute="centerX" secondItem="vSb-0P-wLP" secondAttribute="centerX" id="adF-HJ-vrM"/>
+                                    <constraint firstAttribute="bottom" secondItem="e5j-34-ND1" secondAttribute="bottom" id="eUS-Mc-4jt"/>
+                                    <constraint firstItem="e5j-34-ND1" firstAttribute="top" secondItem="vSb-0P-wLP" secondAttribute="top" constant="17" id="gVd-yh-4hw"/>
+                                    <constraint firstAttribute="height" constant="65" id="wSU-lE-iQ3"/>
+                                    <constraint firstItem="Uvp-WS-WfG" firstAttribute="top" secondItem="vSb-0P-wLP" secondAttribute="top" constant="31" id="x5c-di-dft"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0dm-CN-uGG">
+                                <rect key="frame" x="20" y="85" width="560" height="495"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="90" id="Oz2-yb-vGt" customClass="PostCell" customModule="myHood" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="560" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oz2-yb-vGt" id="dxf-cX-iFO">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="89.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barrel-water-bridge" translatesAutoresizingMaskIntoConstraints="NO" id="FF6-Bd-1qf">
+                                                    <rect key="frame" x="8" y="8" width="74" height="74"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="74" id="2UI-gh-lU5"/>
+                                                        <constraint firstAttribute="width" constant="74" id="MuA-e4-s4A"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fly fishing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvJ-av-Hue">
+                                                    <rect key="frame" x="90" y="6" width="462" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="bsK-rw-KyM"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="F57-ta-Mm6">
+                                                    <rect key="frame" x="90" y="26" width="462" height="58"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="58" id="Y8G-hM-Fqn"/>
+                                                    </constraints>
+                                                    <string key="text">On of the unique things about my neighborhood is that we have a creek that runs through it. I like to fly fish it during the summer. The fish are small but fun!</string>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="F57-ta-Mm6" firstAttribute="leading" secondItem="FF6-Bd-1qf" secondAttribute="trailing" constant="8" id="8Pk-i7-rg0"/>
+                                                <constraint firstItem="FF6-Bd-1qf" firstAttribute="top" secondItem="dxf-cX-iFO" secondAttribute="topMargin" constant="-3" id="9Sv-AQ-KTF"/>
+                                                <constraint firstItem="F57-ta-Mm6" firstAttribute="trailing" secondItem="dxf-cX-iFO" secondAttribute="trailingMargin" id="COK-QF-Ozc"/>
+                                                <constraint firstItem="FF6-Bd-1qf" firstAttribute="bottom" secondItem="dxf-cX-iFO" secondAttribute="bottomMargin" id="CkZ-Mf-OTD"/>
+                                                <constraint firstItem="FF6-Bd-1qf" firstAttribute="leading" secondItem="dxf-cX-iFO" secondAttribute="leadingMargin" id="FOg-Km-KeA"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="FF6-Bd-1qf" secondAttribute="bottom" constant="-3" id="IQF-oV-ZRw"/>
+                                                <constraint firstItem="cvJ-av-Hue" firstAttribute="trailing" secondItem="dxf-cX-iFO" secondAttribute="trailingMargin" id="P4e-6a-vW8"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="F57-ta-Mm6" secondAttribute="bottom" constant="-2" id="Pgu-Ye-c9N"/>
+                                                <constraint firstItem="cvJ-av-Hue" firstAttribute="leading" secondItem="FF6-Bd-1qf" secondAttribute="trailing" constant="8" id="TCW-Of-3KX"/>
+                                                <constraint firstItem="FF6-Bd-1qf" firstAttribute="bottom" secondItem="dxf-cX-iFO" secondAttribute="bottomMargin" id="YwK-j0-S4j"/>
+                                                <constraint firstItem="FF6-Bd-1qf" firstAttribute="leading" secondItem="dxf-cX-iFO" secondAttribute="leadingMargin" id="aKC-eG-ndC"/>
+                                                <constraint firstItem="FF6-Bd-1qf" firstAttribute="top" secondItem="dxf-cX-iFO" secondAttribute="topMargin" id="aZW-OH-xOa"/>
+                                                <constraint firstItem="FF6-Bd-1qf" firstAttribute="leading" secondItem="dxf-cX-iFO" secondAttribute="leadingMargin" id="eI9-86-tFO"/>
+                                                <constraint firstItem="F57-ta-Mm6" firstAttribute="top" secondItem="cvJ-av-Hue" secondAttribute="bottom" id="lxT-xo-c9i"/>
+                                                <constraint firstItem="cvJ-av-Hue" firstAttribute="top" secondItem="dxf-cX-iFO" secondAttribute="topMargin" constant="-2" id="qKz-Av-lOg"/>
+                                                <constraint firstItem="FF6-Bd-1qf" firstAttribute="top" secondItem="dxf-cX-iFO" secondAttribute="topMargin" id="yW6-1f-DT6"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="9Sv-AQ-KTF"/>
+                                                    <exclude reference="CkZ-Mf-OTD"/>
+                                                    <exclude reference="IQF-oV-ZRw"/>
+                                                    <exclude reference="aKC-eG-ndC"/>
+                                                    <exclude reference="aZW-OH-xOa"/>
+                                                    <exclude reference="eI9-86-tFO"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descLbl" destination="F57-ta-Mm6" id="g7D-2P-aW2"/>
+                                            <outlet property="postImg" destination="FF6-Bd-1qf" id="kBN-3Q-T0S"/>
+                                            <outlet property="titleLbl" destination="cvJ-av-Hue" id="Lbi-QF-ZAl"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0dm-CN-uGG" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="DLk-Wg-Mic"/>
+                            <constraint firstItem="0dm-CN-uGG" firstAttribute="top" secondItem="vSb-0P-wLP" secondAttribute="bottom" constant="20" id="LGw-Dg-IMV"/>
+                            <constraint firstItem="0dm-CN-uGG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="NrX-Yr-FRN"/>
+                            <constraint firstItem="vSb-0P-wLP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Uet-Lb-Fse"/>
+                            <constraint firstItem="vSb-0P-wLP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="XBt-jq-mSm"/>
+                            <constraint firstAttribute="trailing" secondItem="vSb-0P-wLP" secondAttribute="trailing" id="lHq-PP-cyY"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0dm-CN-uGG" secondAttribute="bottom" constant="20" id="tqu-S9-rmh"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="0dm-CN-uGG" id="Eff-uX-JCh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="623" y="504"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bannerlogo" width="518" height="194"/>
+        <image name="barrel-water-bridge" width="550" height="440"/>
+        <image name="camera" width="100" height="77"/>
+    </resources>
 </document>
